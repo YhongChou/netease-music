@@ -3,10 +3,11 @@ import { renderRoutes } from 'react-router-config';
 import { HashRouter } from 'react-router-dom';
 
 import routes from './router';
+// import store from './store';
 
 // import AppContent from '@/components/app-content';
-import AppFooter from '@/components/app-footer';
 import AppHeader from '@/components/app-header';
+import AppFooter from '@/components/app-footer';
 
 export default memo(function App() {
   return (
