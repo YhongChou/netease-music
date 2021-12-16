@@ -7,8 +7,11 @@
 
 import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 // import { NavLink } from 'react-router-dom';
 import { headerLinks } from '../../common/local-data';
+
 
 import {
     HeaderWrapper,
@@ -22,6 +25,7 @@ export default memo(function AppHeader() {
             return (
                 <NavLink to={item.link}>
                     {item.title}
+                    <i className="sprite_01 icon"></i>
                 </NavLink>
             )
         } else if (index > 3) {
@@ -34,8 +38,8 @@ export default memo(function AppHeader() {
     return (
         <HeaderWrapper>
             <div className="content wrap-v1">
-                <HeaderLeft>
-                    <a className="logo sprite_01" href="#/"></a>
+                <HeaderLeft className="left">
+                    <a className="logo sprite_01" href="#/"/>
                     <div className="select-list">
                         {
                             headerLinks.map((item, index) => {
@@ -48,7 +52,11 @@ export default memo(function AppHeader() {
                         }
                     </div>
                 </HeaderLeft>
-                <HeaderRight className="right">RIGHT</HeaderRight>
+                <HeaderRight className="right">
+                    <Input placeholder="音乐/视频/电台/用户" prefix={<SearchOutlined />} />
+                    <button className="center">创作者中心</button>
+                    <button className="login">登录</button>
+                </HeaderRight>
             </div>
             <div className="divider">
                 divider
