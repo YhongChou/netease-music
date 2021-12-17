@@ -12,7 +12,6 @@ import { SearchOutlined } from '@ant-design/icons';
 // import { NavLink } from 'react-router-dom';
 import { headerLinks } from '../../common/local-data';
 
-
 import {
     HeaderWrapper,
     HeaderLeft,
