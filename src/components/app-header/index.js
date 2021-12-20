@@ -9,7 +9,6 @@ import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-// import { NavLink } from 'react-router-dom';
 import { headerLinks } from '../../common/local-data';
 
 import {
@@ -19,6 +18,7 @@ import {
 } from './styles';
 
 export default memo(function AppHeader() {
+
     const showSelectItem = (item, index) => {
         if (index < 3) {
             return (
@@ -57,9 +57,7 @@ export default memo(function AppHeader() {
                     <button className="login">登录</button>
                 </HeaderRight>
             </div>
-            <div className="divider">
-                divider
-            </div>
+            <div className="divider"></div>
         </HeaderWrapper>
     )
 })
