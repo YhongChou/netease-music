@@ -1,3 +1,4 @@
+// header栏目录及link
 export const headerLinks = [
     {
       title: "发现音乐",
@@ -25,6 +26,7 @@ export const headerLinks = [
     }
   ]
 
+// footer栏-左侧目录及link
 export const footerLinks = [
   {
     title: "服务条款",
@@ -48,6 +50,7 @@ export const footerLinks = [
   }
 ]
 
+// footer栏-右侧目录及link
 export const footerImages = [
   {
     link: "https://music.163.com/st/userbasic#/auth"
@@ -63,7 +66,7 @@ export const footerImages = [
   }
 ]
 
-// discover中的数据
+// Discover栏-二级目录及link，与routes中的path一一对应
 export const discoverMenu = [
   {
     title: "推荐",

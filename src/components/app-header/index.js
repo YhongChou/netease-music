@@ -20,6 +20,7 @@ import {
 export default memo(function AppHeader() {
 
     const showSelectItem = (item, index) => {
+        // 前3个是与路由相匹配的界面
         if (index < 3) {
             return (
                 <NavLink to={item.link}>
@@ -27,6 +28,7 @@ export default memo(function AppHeader() {
                     <i className="sprite_01 icon"></i>
                 </NavLink>
             )
+        // 后面的是跳转链接
         } else if (index > 3) {
             return (
                 <a href={item.link}>{item.title}</a>

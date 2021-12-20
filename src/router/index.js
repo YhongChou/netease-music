@@ -1,7 +1,7 @@
+import { Redirect } from "react-router";
 import Discover from "../pages/discover";
 import Mine from "../pages/mine";
 import Friends from "../pages/friends";
-import { Redirect } from "react-router";
 import Recommand from "../pages/discover/conten-pages/Recommand";
 import Artist from "../pages/discover/conten-pages/Artist";
 import Songs from "../pages/discover/conten-pages/Songs";
@@ -22,6 +22,7 @@ const routes = [
         path: "/discover",
         component: Discover,
         routes: [
+            // discover路由的默认也爱你
             {
                 path: "/discover",
                 exact: true,
@@ -29,7 +30,7 @@ const routes = [
                     <Redirect to="discover/recommend" />
                 )
             },
-            // 这里的path是跟Discover-discoverMenu-link字段的路由相匹配的
+            // path字段的值与discoverMenu的link字段一一对应
             {
                 path: "/discover/recommend",
                 component: Recommand

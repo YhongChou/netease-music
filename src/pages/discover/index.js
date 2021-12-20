@@ -7,7 +7,7 @@ import {
 } from './styles';
 import { renderRoutes } from 'react-router-config';
 
-// 使用renderRoutes就会有props属性
+// 使用renderRoutes就会有props属性,可获取到route属性
 export default memo(function Discover(props) {
     const { route } = props;
     return (
