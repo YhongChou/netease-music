@@ -22,7 +22,7 @@ const routes = [
         path: "/discover",
         component: Discover,
         routes: [
-            // discover路由的默认也爱你
+            // discover的默认路由
             {
                 path: "/discover",
                 exact: true,
