@@ -66,6 +66,24 @@ const Parent = () => {
     // const preCount = usePrevious(count);
     // console.log('preCount', preCount);
 
+    Object.prototype.map = (callback) => {
+        const obj = this;
+        const res = {};
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                let item = callback(obj[key], key);
+                res[key] = item;
+            }
+        }
+        return res;
+    }
+    const obj = {
+        name: 'nihao',
+        age: 17
+    }
+
+    const res = obj.map(item => `${item} + 'hh'`)
+
     return (
         <div>
             <div>count{count}</div>

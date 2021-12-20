@@ -52,7 +52,7 @@ export default memo(function AppHeader() {
                     </div>
                 </HeaderLeft>
                 <HeaderRight className="right">
-                    <Input placeholder="音乐/视频/电台/用户" prefix={<SearchOutlined />} />
+                    <Input className="search" placeholder="音乐/视频/电台/用户" prefix={<SearchOutlined />} />
                     <button className="center">创作者中心</button>
                     <button className="login">登录</button>
                 </HeaderRight>

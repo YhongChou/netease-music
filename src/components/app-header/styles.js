@@ -14,6 +14,7 @@ export const HeaderWrapper = styled.div`
     background-color: #242424;
     font-size: 14px;
     overflow: hidden;
+    // width: 100vw;
 
     .content {
         height: 70px;
@@ -23,6 +24,7 @@ export const HeaderWrapper = styled.div`
     }
 
     .divider {
+        width: 100%;
         height: 5px;
         background-color: #C20C0C
     }
@@ -39,6 +41,7 @@ export const HeaderLeft = styled.div`
         height: 69px;
         // background-position: 0 0;
         background: url(${sprite});
+        text-indent: -9999px;
     }
 
     .select-list {
@@ -99,9 +102,12 @@ export const HeaderRight = styled.div`
         border-radius: 16px;
 
         input {
-          &::placeholder {
-            font-size: 12px;
-          }
+            height: 32px;
+            border-radius: 16px;
+            margin-left: 5px;
+            &::placeholder {
+                font-size: 12px;
+            }
         }
     }
 
