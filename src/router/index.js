@@ -2,12 +2,12 @@ import { Redirect } from "react-router";
 import Discover from "../pages/discover";
 import Mine from "../pages/mine";
 import Friends from "../pages/friends";
-import Recommand from "../pages/discover/conten-pages/Recommand";
-import Artist from "../pages/discover/conten-pages/Artist";
-import Songs from "../pages/discover/conten-pages/Songs";
-import Radio from "../pages/discover/conten-pages/Radio";
-import Albums from "../pages/discover/conten-pages/Albums";
-import Ranking from "../pages/discover/conten-pages/Ranking";
+import Recommend from "../pages/discover/content-pages/Recommend";
+import Artist from "../pages/discover/content-pages/Artist";
+import Songs from "../pages/discover/content-pages/Songs";
+import Radio from "../pages/discover/content-pages/Radio";
+import Albums from "../pages/discover/content-pages/Albums";
+import Ranking from "../pages/discover/content-pages/Ranking";
 
 const routes = [
     {
@@ -33,7 +33,7 @@ const routes = [
             // path字段的值与discoverMenu的link字段一一对应
             {
                 path: "/discover/recommend",
-                component: Recommand
+                component: Recommend
             },
             {
                 path: "/discover/ranking",

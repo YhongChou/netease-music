@@ -36,6 +36,7 @@ export default memo(function Discover(props) {
                     }
                 </TopMenu>
             </div>
+            {/* 二级路由 */}
             {renderRoutes(route.routes)}
         </DiscoverWrapper>
     )
