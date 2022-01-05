@@ -2,7 +2,9 @@ import * as actionTypes from './constants';
 
 // 默认state
 const defaultState = {
-    topBanners: []
+    topBanners: [],
+    newAlbums: [],
+    rankings: []
 }
 
 /**
@@ -13,9 +15,11 @@ const defaultState = {
 function reducer(state = defaultState, action) {
     switch(action.type) {
         case actionTypes.CHANGE_TOP_BANNERS:
-                return {
-                  ...state,
-                  topBanners: action.topBanners}
+            // 合并数据
+            // 使用ImmutableJS优化更新state时的性能问题
+            return {
+                ...state,
+                topBanners: action.topBanners}
         default:
             return state;
     }

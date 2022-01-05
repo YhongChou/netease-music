@@ -28,18 +28,22 @@
 //   }
 // })
 
+// connect内部也会做一层浅层比较
 // export default connect(mapStateToProps, mapDispatchToProps)(memo(Recommend));
 
-// 2 加入hook版
+// 2 加入hook版, 使用useSelector代替connect
 import React, { memo, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { getTopBannerAction } from './store/action';
 
 function Recommend(props) {
   const dispatch = useDispatch();
+  // 取出state
+  // useSelector会做一层 === 比较
+  // shallowEqual进行浅层比较
   const {topBanners} = useSelector(state => ({
     topBanners: state.recommend.topBanners
-  }));
+  }), shallowEqual);
 
   // 发送网络请求
   useEffect(() => {
