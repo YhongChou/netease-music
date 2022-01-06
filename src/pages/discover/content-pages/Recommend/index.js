@@ -42,7 +42,10 @@ function Recommend(props) {
   // useSelector会做一层 === 比较
   // shallowEqual进行浅层比较
   const {topBanners} = useSelector(state => ({
-    topBanners: state.recommend.topBanners
+    // topBanners: state.recommend.topBanners
+    // topBanners: state.recommend.get("topBanners")
+    // topBanners: state.get("recommend").get("topBanners")
+    topBanners:state.getIn(["recommend", "topBanners"])
   }), shallowEqual);
 
   // 发送网络请求
