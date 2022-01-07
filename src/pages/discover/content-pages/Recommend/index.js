@@ -33,31 +33,13 @@
 
 // 2 加入hook版, 使用useSelector代替connect
 import React, { memo, useEffect } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { getTopBannerAction } from './store/action';
+import TopBanner from './content-pages/top-banner';
 
 function Recommend(props) {
-  const dispatch = useDispatch();
-  // 取出state
-  // useSelector会做一层 === 比较
-  // shallowEqual进行浅层比较
-  const {topBanners} = useSelector(state => ({
-    // topBanners: state.recommend.topBanners
-    // topBanners: state.recommend.get("topBanners")
-    // topBanners: state.get("recommend").get("topBanners")
-    topBanners:state.getIn(["recommend", "topBanners"])
-  }), shallowEqual);
-
-  // 发送网络请求
-  useEffect(() => {
-    dispatch(getTopBannerAction())
-  }, [dispatch]);
-
-
 
   return (
     <div>
-      Recommend {topBanners.length}
+      <TopBanner />
     </div>
   )
 }
