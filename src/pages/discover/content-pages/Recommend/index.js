@@ -34,13 +34,30 @@
 // 2 加入hook版, 使用useSelector代替connect
 import React, { memo, useEffect } from 'react';
 import TopBanner from './content-pages/top-banner';
+import HotRecommend from './content-pages/hot-recommend';
+
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight
+} from './styles.js';
 
 function Recommend(props) {
 
   return (
-    <div>
+    <RecommendWrapper>
       <TopBanner />
-    </div>
+      <Content>
+        <RecommendLeft>
+          <HotRecommend/>
+        </RecommendLeft>
+        <RecommendRight>
+
+        </RecommendRight>
+      </Content>
+
+    </RecommendWrapper>
   )
 }
 
