@@ -1,10 +1,14 @@
 /**
  * @description: reducer文件
- * @param {*}
+ * @param {*} 合并多个reducer
  */
-import { combineReducers } from "redux";
-import { reducer as recommendReducer} from '../pages/discover/content-pages/Recommend/store';
+// import { Map } from "immutable";
+import { combineReducers } from "redux-immutable";
+// import { combineReducers } from "redux";
+import { reducer as recommendReducer} from '../pages/discover/content-pages/recommend/store';
 
+// combineReducers(obj) 会取key Obeject.key(obj), 此处不使用immutable Map
+// 
 const reducer = combineReducers({
     recommend: recommendReducer
 });

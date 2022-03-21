@@ -2,7 +2,7 @@ import { Redirect } from "react-router";
 import Discover from "../pages/discover";
 import Mine from "../pages/mine";
 import Friends from "../pages/friends";
-import Recommend from "../pages/discover/content-pages/Recommend";
+import Recommend from "../pages/discover/content-pages/recommend";
 import Artist from "../pages/discover/content-pages/Artist";
 import Songs from "../pages/discover/content-pages/Songs";
 import Radio from "../pages/discover/content-pages/Radio";

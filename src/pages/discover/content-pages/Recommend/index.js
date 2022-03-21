@@ -28,30 +28,36 @@
 //   }
 // })
 
+// connect内部也会做一层浅层比较
 // export default connect(mapStateToProps, mapDispatchToProps)(memo(Recommend));
 
-// 2 加入hook版
+// 2 加入hook版, 使用useSelector代替connect
 import React, { memo, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getTopBannerAction } from './store/action';
+import TopBanner from './content-pages/top-banner';
+import HotRecommend from './content-pages/hot-recommend';
+
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight
+} from './styles.js';
 
 function Recommend(props) {
-  const dispatch = useDispatch();
-  const {topBanners} = useSelector(state => ({
-    topBanners: state.recommend.topBanners
-  }));
-
-  // 发送网络请求
-  useEffect(() => {
-    dispatch(getTopBannerAction())
-  }, [dispatch]);
-
-
 
   return (
-    <div>
-      Recommend {topBanners.length}
-    </div>
+    <RecommendWrapper>
+      <TopBanner />
+      <Content>
+        <RecommendLeft>
+          <HotRecommend/>
+        </RecommendLeft>
+        <RecommendRight>
+
+        </RecommendRight>
+      </Content>
+
+    </RecommendWrapper>
   )
 }
 
