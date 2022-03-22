@@ -14,7 +14,12 @@ import "@/assets/css/reset.css";
 // import App from './hooks/useRef/同步更新效果';
 // import App from './hooks/useEffect/控制先后执行顺序';
 // import App from './hooks/useEffect/受控组件';
-import App from './hooks/useRef/访问dom';
+// import App from './hooks/useRef/访问dom';
+import App from './hooks/useCallback/eg1-多个 button 不同的更新场景';
+// import App from './hooks/useCallback/eg2-input 频繁更新';
+// import App from './hooks/useMemo';
+// import App from './hooks/useMemo/和React.memo 结合使用';
+// import App from './hooks/useMemo/index';
 
 ReactDOM.render(
   <App />,
