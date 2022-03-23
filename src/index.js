@@ -9,17 +9,18 @@ import "@/assets/css/reset.css";
 // import App from './hooks/useRef';
 // import App from './hooks/setTimeOut';
 // import App from './hooks/闭包陷阱';
-// import App from './hooks/setTimeOut/传入对象型useState';
-// import App from './hooks/setTimeOut/使用useRef';
+// import App from './hooks/闭包陷阱/setTimeout';
 // import App from './hooks/useRef/同步更新效果';
 // import App from './hooks/useEffect/控制先后执行顺序';
 // import App from './hooks/useEffect/受控组件';
 // import App from './hooks/useRef/访问dom';
-import App from './hooks/useCallback/eg1-多个 button 不同的更新场景';
+// import App from './hooks/useCallback/eg1-多个 button 不同的更新场景';
 // import App from './hooks/useCallback/eg2-input 频繁更新';
 // import App from './hooks/useMemo';
 // import App from './hooks/useMemo/和React.memo 结合使用';
 // import App from './hooks/useMemo/index';
+// import App from './hooks/useState/连续 update';
+import App from './hooks/useState/setState 使用相同的 state';
 
 ReactDOM.render(
   <App />,
