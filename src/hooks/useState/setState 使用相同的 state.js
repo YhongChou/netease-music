@@ -8,7 +8,7 @@ const App = () => {
         setCount(1)
     }
 
-    // 多次点击，只会执行两次 log
+    // 多次点击，一共会执行二次 log,
     console.log('debug', '更新次数')
   return <>
   <div>{count}</div>
