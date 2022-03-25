@@ -10,6 +10,7 @@ import "@/assets/css/reset.css";
 // import App from './hooks/setTimeOut';
 // import App from './hooks/闭包陷阱';
 // import App from './hooks/闭包陷阱/setTimeout';
+import App from './hooks/闭包陷阱/method-使用useRef';
 // import App from './hooks/useRef/同步更新效果';
 // import App from './hooks/useEffect/控制先后执行顺序';
 // import App from './hooks/useEffect/受控组件';
@@ -20,7 +21,8 @@ import "@/assets/css/reset.css";
 // import App from './hooks/useMemo/和React.memo 结合使用';
 // import App from './hooks/useMemo/index';
 // import App from './hooks/useState/连续 update';
-import App from './hooks/useState/setState 使用相同的 state';
+// import App from './hooks/useState/setState 使用相同的 state';
+// import App from './hooks/useState/初始值为函数';
 
 ReactDOM.render(
   <App />,

@@ -5,24 +5,24 @@ const App = () => {
     const countRef = useRef(count);
 
     // // 不写依赖列表，或依赖为 undefined/null
-    // useEffect(() => {
-    //     // 打印出什么呢 可以访问到最新值，但每次渲染都创建了一个定时器，每次访问的都是最新的
-    //     countRef.current = count;
-    //     setInterval(() => {
-    //         console.log('debug', countRef.current)
-    //     }, 5000)
-    // })
-    // // 不写依赖列表，或依赖为 undefined/null
     useEffect(() => {
-        // 打印出什么呢 可以访问到最新值，且只有一个 timer
+        // 打印出什么呢 可以访问到最新值，但每次渲染都创建了一个定时器
         countRef.current = count;
         const timer = setInterval(() => {
             console.log('debug', countRef.current)
         }, 5000)
-        return() => {
-            clearInterval(timer)
-        }
     })
+    // // 不写依赖列表，或依赖为 undefined/null
+    // useEffect(() => {
+    //     // 打印出什么呢 可以访问到最新值，且只有一个 timer
+    //     countRef.current = count;
+    //     const timer = setInterval(() => {
+    //         console.log('debug', countRef.current)
+    //     }, 5000)
+    //     return() => {
+    //         clearInterval(timer)
+    //     }
+    // })
     // // 依赖为空数组
     // useEffect(() => {
     //     // 打印出什么呢 只执行一次，访问到的是初始值
@@ -33,11 +33,23 @@ const App = () => {
     // }, [])
     // // 依赖某一个 state
     // useEffect(() => {
-    //     // 打印出什么呢 可以访问到最新值
+    //     // 打印出什么呢 可以访问到最新值, 但有多个 timer
     //     countRef.current = count;
-    //     setInterval(() => {
+    //      const timer = setInterval(() => {
     //         console.log('debug', countRef.current)
     //     }, 5000)
+    // }, [count])
+
+    // // 依赖某一个 state,只有一个 timer
+    // useEffect(() => {
+    //     // 打印出什么呢 可以访问到最新值, 但有多个 timer
+    //     countRef.current = count;
+    //      const timer = setInterval(() => {
+    //         console.log('debug', countRef.current)
+    //     }, 5000)
+    //     return () => {
+    //         clearInterval(timer)
+    //     }
     // }, [count])
 
 
