@@ -11,7 +11,9 @@ class FiberNode {
     constructor(tag, pendingProps, key, mode) {
       // 节点类型信息,实例属性,节点的类型信息
       this.tag = tag; // 标记不同组件类型/Fiber单元类型 ，如classComponent，functionComponent, hostComponent(在 DOM 环境中就是 DOM 节点，例如 div)
-      this.type = null; // 节点元素类型, 表示fiber的真实类型 ，elementType基本一样，如div、MyComp, 在使用了懒加载之类的功能时可能会不一样
+      this.type = null; // 节点元素类型, 表示fiber的真实类型 ，elementType基本一样，如div、MyComp, 在使用了懒加载suspense之类的功能时可能会不一样
+      // 比如 'div', 'span' 这些 HostComponent，或者 function compoenent 的构造函数，class component 的构造函数。'div' 自然不等于 'span'， 两个不同的组件自然也不是相等的
+
       this.key = key; // react元素上的key 就是jsx上写的那个key，也就是最终ReactElement上的
       this.elementType = null; // createElement的第一个参数，ReactElement上的type
 
@@ -24,7 +26,7 @@ class FiberNode {
 
       this.index = 0; //  一般如果没有兄弟节点的话是0 当某个父节点下的子节点是数组类型的时候会给每个子节点一个index，index和key要一起做diff
 
-      this.ref = null; // reactElement上的ref属性
+      this.ref = null; // reactElement上的ref属性,用来标识组件中的不可变量
 
       // 节点状态,节点的组件实例、props、state等，它们将影响组件的输出
         //        对于宿主组件，这里保存宿主组件的实例, 例如DOM节点。
