@@ -93,10 +93,16 @@ export default function App() {
         setDataB(o => o + 1);
     }, []);
 
+    // 点击Cheap组件不会触发Expensive组件的刷新，只有点击Expensive组件才会触发。
+    const onClickC = useCallback(() => {
+        setDataB(o => o + 1);
+    }, [dataB]);
+
 
     return <div>
         <Cheap onClick={onClickA} name={`组件Cheap：${dataA}`}/>
-        <MemoExpensive onClick={onClickB} name={`组件Expensive：${dataB}`} />
+        {/* <MemoExpensive onClick={onClickB} name={`组件Expensive：${dataB}`} /> */}
+        {/* <MemoExpensive onClick={onClickC} name={`组件Expensive：${dataB}`} /> */}
         {/* <ChildMemo info={info}/> */}
         <ChildMemo info={info} count={dataA}/>
     </div>

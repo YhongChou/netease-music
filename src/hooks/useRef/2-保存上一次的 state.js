@@ -27,9 +27,11 @@ const Child = (props) => {
     console.log('debug', '3', prevCountRef, count);
     return (
       <div>
-        <button onClick={() => setCount(count + 1)}>{count}</button>
+        <button onClick={() => {setCount(count + 1)}}>点击改变 count{count}</button>
+        {/* 点击并不会触发函数组件的重新执行,因为并没有使用到 dispatcher */}
+        <button onClick={() => {prevCountRef.current = count + 1}}>点击改变 ref{count}</button>
         {/* <Child text={text}/> */}
-        <h1>now: {count}</h1>
+        {/* <h1>now: {count}</h1> */}
         <h1>before: {prevCountRef.current}</h1>
       </div>
     )
