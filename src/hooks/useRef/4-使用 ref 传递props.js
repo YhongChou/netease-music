@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Child = ({item}) => {
+const Child = (item) => {
     console.log('debug', 'Child', item)
     return (<div>{item}</div>)
 }
 
-const App = () => {
+export default function App() {
     const [count, setCount] = React.useState(0)
     const [name, setName] = React.useState("")
     React.useEffect(() => {
@@ -21,16 +21,18 @@ const App = () => {
     console.log('debug', 'App', item)
     return (
       <>
-        <input
+        {/* <input
           value={name}
           onChange={e => {
             setName(e.target.value)
           }}
         />
-        <div>counter:{count}</div>
+        <div>counter:{count}</div> */}
         <Child item={item.current} />
       </>
     )
   }
 
-export default App
+  console.log('window.performance.now()', window.performance.now());
+
+// export default App
